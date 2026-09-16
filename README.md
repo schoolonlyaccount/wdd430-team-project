@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Team Members
+
+- Michael Kyne
+- Armando Fernandez 
+- Boluwatife Alewi 
+- Ifeanyi Eme
+
+## Project Description
+
+TaskTrack is a simple task management web application for students who want to keep track of their schoolwork in one place. Users can create an account and manage their tasks by adding, editing, completing, and deleting them. A simple dashboard shows users what tasks they have coming up and which tasks they have completed.
