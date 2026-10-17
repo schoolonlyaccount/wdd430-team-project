@@ -1,6 +1,30 @@
 import { clerkMiddleware } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
-export default clerkMiddleware();
+export default clerkMiddleware(async (auth, req) => {
+    const pathname = req.nextUrl.pathname;
+
+    const isProtectedRoute =
+        pathname === "/tasks" ||
+        pathname.startsWith("/tasks/") ||
+        pathname === "/api/tasks" ||
+        pathname.startsWith("/api/tasks/");
+
+    if (isProtectedRoute) {
+        const { userId } = await auth();
+
+        if (!userId) {
+            if (pathname.startsWith("/api/")) {
+                return NextResponse.json(
+                    { message: "Unauthorized" },
+                    { status: 401 }
+                );
+            }
+
+            return NextResponse.redirect(new URL('/sign-in', req.url));
+        }
+    }
+});
 
 export const config = {
     matcher: [
