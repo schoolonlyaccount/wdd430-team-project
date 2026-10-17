@@ -43,3 +43,34 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Project Description
 
 TaskTrack is a simple task management web application for students who want to keep track of their schoolwork in one place. Users can create an account and manage their tasks by adding, editing, completing, and deleting them. A simple dashboard shows users what tasks they have coming up and which tasks they have completed.
+
+
+## Environment Configuration
+TaskTrack uses MongoDB to store and retrieve task data. The MongoDB connection string is configured through environment variables.
+
+# Required Environment Variables
+Create a .env.local file in the root directory of the project and configure the following variables:
+
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY     (Clerk publishable key used by the application for authentication.)
+- CLERK_SECRET_KEY                      (Secret key used by the server to interact with Clerk.)
+- MONGODB_URI                           (MongoDB connection string used to connect to the TaskTrack database.)
+
+Example configuration:
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+- CLERK_SECRET_KEY=your_clerk_secret_key
+- MONGODB_URI=your_mongodb_connection_string
+Replace the placeholder values with the appropriate credentials from your Clerk and MongoDB configurations.
+
+# Setup Instructions
+1. Ensure you have access to a configured MongoDB database and a Clerk application.
+2. Create .env.local in the project root.
+3. Add the required environment variables listed above.
+4. Install project dependencies by running npm install.
+5. Start the development server by running npm run dev.
+The application uses a reusable MongoDB connection shared by its API Route Handlers. Clerk handles user authentication, while MongoDB stores and retrieves task data.
+
+# Security
+- Never commit .env.local or actual credentials to version control.
+- Keep CLERK_SECRET_KEY and MONGODB_URI server-side.
+- Only use the NEXT_PUBLIC_ prefix for values intentionally exposed to the browser, such as the Clerk publishable key.
+- Ensure .env.local is excluded from Git using .gitignore.
