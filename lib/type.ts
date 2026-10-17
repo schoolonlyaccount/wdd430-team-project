@@ -1,11 +1,20 @@
-export type TaskStatus = "active" | "completed";
+import { ObjectId } from "mongodb";
 
-export type Task = {
-    userId: string;
+// Task Statuses
+export type TaskStatus = "in-progress" | "completed";
+
+// Creating
+export type NewTask = {
     title: string;
     details: string;
-    dueDate: Date;
-    status: TaskStatus;
+    dueDate: string; // DD/MM/YYYY
+}
+
+// Full Task
+export type TaskDocument = {
+    _id: ObjectId;
+    userId: string;
     createdAt: Date;
     updatedAt: Date;
-}
+    status: TaskStatus;
+} & NewTask;

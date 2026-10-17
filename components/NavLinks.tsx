@@ -20,7 +20,7 @@ export default function NavLinks() {
                         <Link href="/dashboard" className={`${liStyle} ${isActive('/dashboard')}`}>Dashboard</Link>
                     </li>
                     <li>
-                        <Link href="/tasks" className={`${liStyle} ${isActive('/tasks')}`}>Tasks</Link>
+                        <Link href="/tasks?status=all" className={`${liStyle} ${isActive('/tasks')}`}>Tasks</Link>
                     </li>
                     <li>
                         <Link href="/profile" className={`${liStyle} ${isActive('/profile')}`}>Profile</Link>
