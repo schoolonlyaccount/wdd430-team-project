@@ -38,9 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Team Members
 
 - Michael Kyne
-- Armando Fernandez
-- Boluwatife Alewi
-- Ifeanyi Eme
+- There are no others...
 
 ## Project Description
 
